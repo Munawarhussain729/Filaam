@@ -1,0 +1,17 @@
+.actor_image {
+    border-radius: 50%;
+    width: 200px;
+}
+
+.actor_detail {
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.actor_story {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
