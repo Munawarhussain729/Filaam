@@ -1,0 +1,51 @@
+.loginCard {
+    padding: 30px;
+    margin-top: 150px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 2px 14px 10px lawngreen;
+    background: #00000021;
+    color: white;
+}
+
+.loginButton {
+    background: green !important;
+    width: 50%;
+    transition: 0.5s all ease-in-out !important;
+    border: 1px solid black !important;
+}
+
+.loginButton:hover {
+    width: 100%;
+    font-size: 20px;
+    border: 1px solid lawngreen !important;
+}
+
+.moveToCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signupNavigate {
+    color: #979aa1;
+    margin-top: 20px;
+}
+
+.signupNavigate>span {
+    font-weight: 700;
+    color: rgb(170, 211, 167);
+    cursor: pointer;
+    margin: 10px;
+    border: 1px solid rgb(19, 19, 19);
+    background: rgb(19, 19, 19);
+    transition: 1s all ease-in-out;
+    padding: 10px;
+}
+
+.signupNavigate>span:hover {
+    background: green;
+    color: black;
+    padding: 10px;
+}
