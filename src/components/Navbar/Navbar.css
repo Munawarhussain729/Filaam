@@ -1,0 +1,34 @@
+.navbar {
+    background: rgb(19, 19, 19);
+    padding: 0px 50px !important;
+}
+
+.navbar-link {
+    color: white !important;
+    margin: 5px 10px;
+    text-decoration: none;
+}
+
+.side-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0px;
+    background-color: #565252;
+    ;
+}
+
+.side-navbar>a {
+    color: white;
+    text-decoration: none;
+}
+
+.css-1r7kz78-MuiModal-root-MuiDrawer-root .MuiDrawer-paper {
+    background: rgb(19, 19, 19) !important;
+}
+
+.searchBar {
+    color: white;
+    padding: 5px 10px;
+    border-bottom: 1px solid white;
+}

@@ -7,46 +7,35 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import "./Slider.css";
-import Bill_Skarsegard from "../assets/Bill_Skarsegard.jpeg";
-import Donnie_Yen from "../assets/Donnie_Yen.jpeg";
-import Ian_Mcshane from "../assets/Ian_Mcshane.jpeg";
-import Keanu_Reeves from "../assets/Keanu_Reeves.jpeg";
-import Lance_Reddick from "../assets/Lance_Reddick.jpeg";
-import Scott_Adkins from "../assets/Scott_Adkins.jpeg";
+import GodFather1 from "../../assets/GodFather1.jpg";
+import GodFather2 from "../../assets/GodFather2.jpeg";
+import GodFather3 from "../../assets/GOdFather3.jpeg";
+import Inception from "../../assets/Inception.jpeg";
+import PublicEnemies from "../../assets/PublicEnemies.jpeg";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { Container } from "react-bootstrap";
 
-export default function StarCaseTestimonial() {
+export default function RecommendedTestimonial() {
   const StarCast = [
     {
-      image: Keanu_Reeves,
-      characterName: "John Wick",
-      name: "Keanu Reeves",
+      image: GodFather1,
+      name: "God Father 1",
     },
     {
-      image: Scott_Adkins,
-      characterName: "Kill",
-      name: "Scott Adkins",
+      image: GodFather2,
+      name: "God Father 2",
     },
     {
-      image: Lance_Reddick,
-      characterName: "Charon",
-      name: "Lance Reddik",
+      image: GodFather3,
+      name: "God Father 3",
     },
     {
-      image: Donnie_Yen,
-      characterName: "Caine",
-      name: "Donnie Yen",
+      image: Inception,
+      name: "Inception",
     },
     {
-      image: Bill_Skarsegard,
-      characterName: "Bryan Bedder",
-      name: "Bill Skarsegard",
-    },
-    {
-      image: Ian_Mcshane,
-      characterName: "Winston",
-      name: "Iam Mcshance",
+      image: PublicEnemies,
+      name: "Public Enemies",
     },
   ];
   return (
@@ -61,15 +50,15 @@ export default function StarCaseTestimonial() {
         navigation={true}
         breakpoints={{
           640: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 20,
           },
           768: {
-            slidesPerView: 3,
+            slidesPerView: 2,
             spaceBetween: 40,
           },
           1024: {
-            slidesPerView: 5,
+            slidesPerView: 3,
             spaceBetween: 50,
           },
         }}
@@ -82,15 +71,14 @@ export default function StarCaseTestimonial() {
               <Container className="starCastContainer">
                 <div>
                   <img
-                    style={{ width: "170px", borderRadius: "25px" }}
+                    style={{ width: "270px", borderRadius: "25px" }}
                     src={item.image}
-                    alt="Star Cast not found"
+                    alt="Recommended not found"
                   />
                 </div>
                 <h4 style={{ color: "white", marginTop: "10px" }}>
                   {item.name}
                 </h4>
-                <h4 className="grey_text">{item.characterName}</h4>
               </Container>
             </SwiperSlide>
           );

@@ -1,0 +1,27 @@
+.swiper {
+    width: 100%;
+    background: rgb(19, 19, 19);
+}
+
+.swiper-slide {
+    background: rgb(19, 19, 19);
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-slide img {
+    display: block;
+}
+
+.mainSliderContent {
+    position: absolute;
+    left: 80px;
+    width: 500px;
+    background: rgba(19, 19, 19, 0.518);
+    color: white;
+}
+
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+    top: 458px !important
+}

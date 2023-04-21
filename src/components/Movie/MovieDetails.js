@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import JohnImage from "../assets/JohnWick.jpeg";
+import JohnImage from "../../assets/JohnWick.jpeg";
 import "./MovieDetail.css";
 import Rating from "./StarRating";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
