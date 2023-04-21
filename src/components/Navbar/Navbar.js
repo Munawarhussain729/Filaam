@@ -37,7 +37,7 @@ function NavBar(props) {
       <List>
         {navItems.map((item) => (
           <ListItem className="side-navbar" key={item} disablePadding>
-            <Link to="/movieDetail" sx={{ textAlign: "center" }}>
+            <Link to="/" sx={{ textAlign: "center" }}>
               <ListItemText primary={item} />
             </Link>
           </ListItem>
@@ -87,7 +87,7 @@ function NavBar(props) {
             {navItems.map((item) => (
               <Link
                 className="navbar-link"
-                to="/movieDetail"
+                to="/"
                 key={item}
                 sx={{ color: "#fff" }}
               >

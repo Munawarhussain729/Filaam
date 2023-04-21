@@ -1,0 +1,17 @@
+.movieCard>img {
+    height: 400px;
+}
+
+.movieCard {
+
+    text-align: center;
+    background: rgb(119, 114, 114);
+    margin: 0px 20px;
+    margin-top: 40px;
+    transition: 0.3s ease-in all;
+}
+
+.movieCard:hover {
+    margin-top: 10px;
+    box-shadow: 0px -1px 25px 7px white;
+}

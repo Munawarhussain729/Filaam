@@ -13,7 +13,7 @@ const MovieDetails = () => {
   const [selected, setSelected] = useState(false);
   return (
     <>
-      <Container fluid>
+      <Container fluid style={{marginTop:"50px"}}>
         <Row>
           <Col lg={3} md={3}>
             <img
