@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -22,11 +22,19 @@ const navItems = ["Home", "About", "Contact"];
 
 function NavBar(props) {
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 6000);
+  }, []);
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
@@ -63,74 +71,80 @@ function NavBar(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <AppBar component="nav">
-        <Toolbar className="navbar">
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-          >
-            Filaam
-          </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Link
-                className="navbar-link"
-                to="/"
-                key={item}
-                sx={{ color: "#fff" }}
+    <>
+      {loading ? (
+        <></>
+      ) : (
+        <Box sx={{ display: "flex" }}>
+          <CssBaseline />
+          <AppBar component="nav">
+            <Toolbar className="navbar">
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ mr: 2, display: { sm: "none" } }}
               >
-                {item}
-              </Link>
-            ))}
-            <InputBase
-              sx={{ ml: 1, flex: 1 }}
-              placeholder="Search"
-              className="searchBar"
-            />
-            <IconButton
-              style={{ color: "white" }}
-              type="button"
-              sx={{ p: "10px" }}
-              aria-label="search"
+                <MenuIcon />
+              </IconButton>
+              <Typography
+                variant="h6"
+                component="div"
+                sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+              >
+                Filaam
+              </Typography>
+              <Box sx={{ display: { xs: "none", sm: "block" } }}>
+                {navItems.map((item) => (
+                  <Link
+                    className="navbar-link"
+                    to="/"
+                    key={item}
+                    sx={{ color: "#fff" }}
+                  >
+                    {item}
+                  </Link>
+                ))}
+                <InputBase
+                  sx={{ ml: 1, flex: 1 }}
+                  placeholder="Search"
+                  className="searchBar"
+                />
+                <IconButton
+                  style={{ color: "white" }}
+                  type="button"
+                  sx={{ p: "10px" }}
+                  aria-label="search"
+                >
+                  <SearchIcon color="white" />
+                </IconButton>
+              </Box>
+            </Toolbar>
+          </AppBar>
+          <Box className="side-navbar" component="nav">
+            <Drawer
+              container={container}
+              // variant="temporary"
+              open={mobileOpen}
+              onClose={handleDrawerToggle}
+              ModalProps={{
+                keepMounted: true, // Better open performance on mobile.
+              }}
+              sx={{
+                display: { xs: "block", sm: "none" },
+                "& .MuiDrawer-paper": {
+                  boxSizing: "border-box",
+                  width: drawerWidth,
+                },
+              }}
             >
-              <SearchIcon color="white" />
-            </IconButton>
+              {drawer}
+            </Drawer>
           </Box>
-        </Toolbar>
-      </AppBar>
-      <Box className="side-navbar" component="nav">
-        <Drawer
-          container={container}
-          // variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
-          }}
-        >
-          {drawer}
-        </Drawer>
-      </Box>
-    </Box>
+        </Box>
+      )}
+    </>
   );
 }
 

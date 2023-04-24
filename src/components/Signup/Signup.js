@@ -4,7 +4,9 @@ import Button from "react-bootstrap/Button";
 import { Col, Container, Row } from "react-bootstrap";
 import React from "react";
 import "./Signup.css";
+import { useNavigate } from "react-router-dom";
 const Signup = () => {
+  const navigate = useNavigate();
   return (
     <div
       style={{
@@ -44,7 +46,13 @@ const Signup = () => {
             <Form.Control type="password" placeholder="Password" />
           </Form.Group>
           <div className="moveToCenter">
-            <Button type="submit" className="submitButton">
+            <Button
+              type="submit"
+              className="submitButton"
+              onClick={() => {
+                navigate("/");
+              }}
+            >
               Signup
             </Button>
           </div>
